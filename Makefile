@@ -7,6 +7,9 @@ init-ubuntu:
 provision: 
 	ansible-playbook -u ${USERNAME} -i inventory/inventory playbooks/machine_setup.yaml
 
+provision-debug:
+	ansible-playbook -u ${USERNAME} -i inventory/inventory playbooks/machine_setup.yaml --tags debug
+
 ubuntu:
 	@vagrant up ubuntu --provision
 

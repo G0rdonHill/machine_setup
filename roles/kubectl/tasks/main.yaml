@@ -1,0 +1,36 @@
+---
+- name: Install Pre-requisite Packages
+  apt:
+    name: "{{ prereq_pkgs }}"
+    state: present
+
+- name: Add kubectl apt key
+  apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    state: present
+    keyring: /etc/apt/trusted.gpg.d/kubectl-apt-key.gpg
+
+- name: Add kubectl repo
+  apt_repository:
+    repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
+    filename: kubernetes
+
+- name: Install kubectl
+  apt:
+    name: kubectl
+    state: present
+    update_cache: yes
+
+- name: Create kubectl config file
+  become: no
+  file:
+    state: "{{ item.state }}"
+    path: "/home/{{ ansible_user }}/{{ item.path }}"
+  loop:
+    - { state: directory, path: .kube }
+    - { state: touch, path: .kube/config }
+
+# - name: Set kubectl config file
+#   shell: "kubectl --kubeconfig /home/{{ ansible_user }}/.kube/config"
+- name: Enable kubectl auto completion
+  shell: kubectl completion bash >/etc/bash_completion.d/kubectl
