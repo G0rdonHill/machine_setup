@@ -1,0 +1,9 @@
+---
+- name: Install Helm
+  snap:
+    name: helm
+    state: present
+    classic: yes
+
+- name: Helm Completion
+  shell: helm completion bash >/etc/bash_completion.d/helm
