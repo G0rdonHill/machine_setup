@@ -1,0 +1,17 @@
+---
+- name: Pull kubectx
+  git:
+    repo: https://github.com/ahmetb/kubectx.git
+    dest: "{{ kubectx_dir }}"
+    clone: yes
+
+- name: Create symlinks for PATH and bash completion
+  file: 
+    src: "{{ item.src }}"
+    dest: "{{item.dest }}"
+    state: link
+  loop:
+    - { src: "{{ kubectx_dir }}/kubectx", dest: /usr/local/bin/kubectx }
+    - { src: "{{ kubectx_dir }}/kubens", dest: /usr/local/bin/kubens }
+    - { src: "{{ kubectx_dir }}/completion/kubens.bash", dest: /etc/bash_completion.d/kubens }
+    - { src: "{{ kubectx_dir }}/completion/kubectx.bash", dest: /etc/bash_completion.d/kubectx }

@@ -34,3 +34,6 @@
 #   shell: "kubectl --kubeconfig /home/{{ ansible_user }}/.kube/config"
 - name: Enable kubectl auto completion
   shell: kubectl completion bash >/etc/bash_completion.d/kubectl
+
+- include: kubectx.yaml
+  when: kubectx
