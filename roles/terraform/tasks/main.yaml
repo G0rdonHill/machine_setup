@@ -1,0 +1,14 @@
+- name: Download Terraform
+  get_url:
+    url: "{{ terraform_download_url }}"
+    dest: "/var/tmp/{{ terraform_zip }}"
+
+- name: Extract terraform into /usr/local/bin
+  unarchive:
+    src: "/var/tmp/{{ terraform_zip }}"
+    dest: /usr/local/bin/
+
+- name: Remove downloaded zip
+  file: 
+    path: "/var/tmp/{{ terraform_zip }}"
+    state: absent
