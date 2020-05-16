@@ -1,4 +1,10 @@
 ---
+- name: Install pre-requisite
+  apt:
+    name: "{{ prereq_pkgs }}"
+    state: present
+    update_cache: yes
+
 - name: Install Helm
   snap:
     name: helm
