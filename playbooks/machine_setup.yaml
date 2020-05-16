@@ -46,14 +46,17 @@
     - role: kubectl
       tags:
         - devops
-        - debug 
+    
+    - role: helm
+      tags:
+        - devops
+        - debug
 
 ## TODO List ##
 
 ## Tools ##
 
 # multisystem usb boot
-# helm
 # git config
 
 # Browsers 
