@@ -1,0 +1,23 @@
+---
+- name: defaults
+  debug:
+    msg: "user: {{ bash_it_user }}"
+- name: dir
+  debug:
+    msg: "dir: {{ bash_it_dir }}"
+
+- name: Clone bash-it git repo
+  git:
+    repo: https://github.com/Bash-it/bash-it.git
+    clone: yes
+    depth: 1
+    dest: "{{ bash_it_dir }}"
+
+- name: Run bash_it install script
+  shell: "{{ bash_it_dir }}/install.sh --silent"
+
+- name: Set bash-it theme
+  replace:
+    path: "{{ bash_it_user }}/.bashrc"
+    regexp: bobby
+    replace: atomic
