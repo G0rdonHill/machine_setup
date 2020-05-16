@@ -1,0 +1,32 @@
+---
+- hosts: all
+  become: true
+  roles:
+    - prereqs
+    - docker
+    - vs-code
+    - azure-cli
+    - google-cloud
+    - docker-compose
+    - role: bash-it
+      become: no
+    - role: virtual-box
+      tags:
+        - debug
+
+# calibre
+# brave 
+# bashit 
+# chrome
+# spotify
+# vagrant 
+# vbox
+
+# virtualenv 
+# ansible
+# terraform
+# tor
+
+# multisystem usb boot
+# kubectl
+# helm

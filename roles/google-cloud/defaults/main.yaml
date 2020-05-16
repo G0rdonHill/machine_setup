@@ -1,0 +1,2 @@
+---
+prereq_pkgs: [apt-transport-https, ca-certificates, gnupg]
