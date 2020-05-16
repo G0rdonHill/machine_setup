@@ -1,2 +1,2 @@
 ---
-prereq_pkgs: [python3-pip, git]
+prereq_pkgs: [python3-pip, git, unzip]
