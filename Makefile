@@ -12,5 +12,3 @@ ubuntu:
 
 clean:
 	@vagrant destroy ubuntu -f
-activate:	
-	source /home/${USERNAME}/ansible2.9/bin/activate

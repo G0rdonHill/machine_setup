@@ -39,12 +39,15 @@
       tags:
         - devops
 
+    - role: terraform
+      tags:
+        - devops
+        - debug
+
 ## TODO List ##
 
 ## Tools ##
-# virtualenv 
-# ansible
-# terraform
+
 # multisystem usb boot
 # kubectl
 # helm
