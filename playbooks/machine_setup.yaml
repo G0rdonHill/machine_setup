@@ -2,31 +2,59 @@
 - hosts: all
   become: true
   roles:
-    - prereqs
-    - docker
-    - vs-code
-    - azure-cli
-    - google-cloud
-    - docker-compose
+    - role: prereqs
+      tags: 
+        - common
+
+    - role: docker
+      tags:
+        - devops
+
+    - role: vs-code
+      tags:
+        - devops 
+
+    - role: azure-cli
+      tags:
+        - devops
+
+    - role: google-cloud
+      tags:
+        - devops
+
+    - role: docker-compose
+      tags:
+        - devops
+
     - role: bash-it
       become: no
+      tags:
+        - common
+
     - role: virtual-box
       tags:
-        - debug
+        - devops
 
-# calibre
-# brave 
-# bashit 
-# chrome
-# spotify
-# vagrant 
-# vbox
+    - role: vagrant
+      tags:
+        - devops
 
+## TODO List ##
+
+## Tools ##
 # virtualenv 
 # ansible
 # terraform
-# tor
-
 # multisystem usb boot
 # kubectl
 # helm
+# git config
+
+# Browsers 
+# tor
+# brave 
+# chrome
+
+#Misc
+# calibre
+# spotify
