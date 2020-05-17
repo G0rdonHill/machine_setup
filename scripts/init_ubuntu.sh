@@ -2,8 +2,9 @@
 
 sudo apt-get update
 sudo apt-get upgrade -y
-sudo apt-get install python-virtualenv python3-pip -y
-
+sudo apt-get install -y python3-pip #python-virtualenv
+pip3 install virtualenv
+##using python2
 mkdir /home/vagrant/.ansible2.9
 
 virtualenv /home/vagrant/.ansible2.9

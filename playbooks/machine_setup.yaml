@@ -2,7 +2,7 @@
 - hosts: all
   become: true
   roles:
-    - role: prereqs
+    - role: git
       tags: 
         - common
 
@@ -46,15 +46,17 @@
     - role: kubectl
       tags:
         - devops
-        - debug 
+        - debug
+    
+    - role: helm
+      tags:
+        - devops
 
 ## TODO List ##
 
 ## Tools ##
 
 # multisystem usb boot
-# helm
-# git config
 
 # Browsers 
 # tor
