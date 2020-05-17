@@ -1,0 +1,5 @@
+---
+- name: Install chrome
+  apt:
+    deb: "{{ chrome_url }}"
+    state: present

@@ -1,0 +1,9 @@
+---
+- include: chrome.yaml
+  when: chrome
+
+- include: brave.yaml
+  when: brave
+
+- include: tor.yaml
+  when: tor
