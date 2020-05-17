@@ -1,3 +1,10 @@
+---
+- name: Install Pre-requisites
+  apt:
+    name: unzip
+    state: present
+    update_cache: yes
+
 - name: Download Terraform
   get_url:
     url: "{{ terraform_download_url }}"
