@@ -1,0 +1,4 @@
+---
+calibre: yes
+calibre_script: /var/tmp/linux-installer.sh
+spotify: yes

@@ -1,0 +1,14 @@
+---
+- name:  Download Calibre installer script
+  get_url:
+    url: https://download.calibre-ebook.com/linux-installer.sh
+    dest: "{{ calibre_script }}"
+    mode: +x
+
+- name: Install calibre
+  shell: "{{ calibre_script }}"
+
+- name: Remove Calibre installer script
+  file: 
+    path: "{{ calibre_script }}"
+    state: absent
