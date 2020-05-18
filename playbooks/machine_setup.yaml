@@ -10,10 +10,6 @@
       tags:
         - devops
 
-    - role: vs-code
-      tags:
-        - devops 
-
     - role: azure-cli
       tags:
         - devops
@@ -51,17 +47,18 @@
       tags:
         - devops
     
+    - role: vs-code
+      tags:
+        - devops
+
     - role: browsers
       tags:
         - common
 
     - role: misc
-      tags:
-        - debug
 
 ## TODO List ##
 
 ## Tools ##
-## VS code extensions // config
 ## chrome extenstions
 # multisystem usb boot
