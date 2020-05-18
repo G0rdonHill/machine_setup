@@ -54,6 +54,9 @@
     - role: browsers
       tags:
         - common
+
+    - role: misc
+      tags:
         - debug
 
 ## TODO List ##
@@ -62,7 +65,3 @@
 ## VS code extensions // config
 ## chrome extenstions
 # multisystem usb boot
-
-#Misc
-# calibre
-# spotify
