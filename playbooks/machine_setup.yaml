@@ -46,22 +46,22 @@
     - role: kubectl
       tags:
         - devops
-        - debug
     
     - role: helm
       tags:
         - devops
+    
+    - role: browsers
+      tags:
+        - common
+        - debug
 
 ## TODO List ##
 
 ## Tools ##
-
+## VS code extensions // config
+## chrome extenstions
 # multisystem usb boot
-
-# Browsers 
-# tor
-# brave 
-# chrome
 
 #Misc
 # calibre
