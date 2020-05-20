@@ -1,5 +1,5 @@
 ---
 ansible_python_interpreter: /usr/bin/python3
 
-#Compatible with mint (hopefully)
-release_name: "{{ 'bionic' when ansible_distribution_release == 'tricia' }}"
+# This should be left as bionic for Mint 19.x also
+# release_name: bionic
