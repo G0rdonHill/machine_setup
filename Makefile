@@ -13,5 +13,17 @@ provision-debug:
 ubuntu:
 	@vagrant up ubuntu --provision
 
-clean:
+mint:
+	@vagrant up mint --provision
+
+clean-ubuntu:
 	@vagrant destroy ubuntu -f
+
+clean-mint:
+	@vagrant destroy mint -f
+
+con-ubuntu:
+	@vagrant ssh ubuntu
+
+con-mint:
+	@vagrant ssh mint
