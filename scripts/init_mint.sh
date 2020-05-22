@@ -1,15 +1,13 @@
 #!/bin/bash
 set -xe
-user=$(whoami)
 sudo apt-get update
 sudo apt-get upgrade -y
-sudo apt-get install -y python3-pip #python-virtualenv
-# setuptools
-# wheel
-# pip3 install virtualenv
+sudo apt-get install -y python3-pip
+pip3 install setuptools
+pip3 install wheel
+pip3 install virtualenv
 which virtualenv
-exit 1
-##using python2
+
 mkdir /home/vagrant/.ansible2.9
 
 virtualenv /home/vagrant/.ansible2.9

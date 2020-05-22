@@ -1,5 +1,5 @@
 ---
 - name: Install Code Extensions
   become: no
-  shell: "code --install-extension {{ item }}"
+  shell: "/snap/bin/code --install-extension {{ item }}"
   loop: "{{ code_extensions }}"
