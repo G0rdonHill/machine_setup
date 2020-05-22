@@ -1,0 +1,4 @@
+---
+install_extensions: yes
+code_extensions: [eamodio.gitlens, ivory-lab.jenkinsfile-support, mauve.terraform, ms-azuretools.vscode-docker, ms-kubernetes-tools.vscode-kubernetes-tools, ms-python.python, redhat.vscode-yaml, vscoss.vscode-ansible]
+prereq_pkgs: [snapd]

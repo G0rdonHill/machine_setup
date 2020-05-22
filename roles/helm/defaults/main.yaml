@@ -1,2 +1,2 @@
 ---
-prereq_pkgs: [ bash-completion ]
+prereq_pkgs: [ bash-completion, snapd ]

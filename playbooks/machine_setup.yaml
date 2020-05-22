@@ -2,6 +2,9 @@
 - hosts: all
   become: true
   roles:
+    - role: debug
+      tags: debug
+
     - role: git
       tags: 
         - common
@@ -9,10 +12,6 @@
     - role: docker
       tags:
         - devops
-
-    - role: vs-code
-      tags:
-        - devops 
 
     - role: azure-cli
       tags:
@@ -34,6 +33,7 @@
     - role: virtual-box
       tags:
         - devops
+        - vbox
 
     - role: vagrant
       tags:
@@ -51,17 +51,18 @@
       tags:
         - devops
     
+    - role: vs-code
+      tags:
+        - devops
+
     - role: browsers
       tags:
         - common
 
     - role: misc
-      tags:
-        - debug
 
 ## TODO List ##
 
 ## Tools ##
-## VS code extensions // config
 ## chrome extenstions
 # multisystem usb boot

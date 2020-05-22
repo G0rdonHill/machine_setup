@@ -1,4 +1,10 @@
 ---
+- name: Install Pre-reqs
+  apt:
+    name: "{{ prereq_pkgs }}"
+    state: present
+    update_cache: yes
+
 - name: Install spotify snap
   snap:
     name: spotify
