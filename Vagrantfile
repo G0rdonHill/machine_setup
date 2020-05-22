@@ -1,6 +1,4 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "ubuntu/bionic64"
-
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine and only allow access
   # via 127.0.0.1 to disable public access
@@ -19,5 +17,8 @@ Vagrant.configure("2") do |config|
     ubuntu.vm.provision "shell", path: "./scripts/init_ubuntu.sh"
     ubuntu.vm.box = "ubuntu/bionic64"
   end
-
+  config.vm.define "mint" do |mint|
+    mint.vm.provision "shell", path: "./scripts/init_mint.sh"
+    mint.vm.box = "mrlesmithjr/linuxmint-19.3"
+  end
 end
