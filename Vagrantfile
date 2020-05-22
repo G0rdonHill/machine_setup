@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
     ubuntu.vm.box = "ubuntu/bionic64"
   end
   config.vm.define "mint" do |mint|
-    mint.vm.provision "shell", path: "./scripts/init_ubuntu.sh"
+    mint.vm.provision "shell", path: "./scripts/init_mint.sh"
     mint.vm.box = "mrlesmithjr/linuxmint-19.3"
   end
 end

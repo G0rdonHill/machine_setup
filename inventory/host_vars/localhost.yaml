@@ -2,4 +2,4 @@
 ansible_python_interpreter: /usr/bin/python3
 
 # This should be left as bionic for Mint 19.x also
-# release_name: bionic
+release_name: bionic
