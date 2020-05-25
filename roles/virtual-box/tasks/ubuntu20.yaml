@@ -1,0 +1,6 @@
+---
+- name: Install Virtualbox Ubuntu 20
+  apt:
+    name: "virtualbox"
+    update_cache: yes
+    state: fixed
