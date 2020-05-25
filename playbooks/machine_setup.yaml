@@ -14,6 +14,8 @@
         - devops
 
     - role: azure-cli
+      # Az CLI has no install method for ubuntu 20
+      release_name: bionic
       tags:
         - devops
 
