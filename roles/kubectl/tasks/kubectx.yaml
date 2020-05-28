@@ -4,11 +4,12 @@
     repo: https://github.com/ahmetb/kubectx.git
     dest: "{{ kubectx_dir }}"
     clone: yes
+    version: master
 
 - name: Create symlinks for PATH and bash completion
-  file: 
+  file:
     src: "{{ item.src }}"
-    dest: "{{item.dest }}"
+    dest: "{{ item.dest }}"
     state: link
   loop:
     - { src: "{{ kubectx_dir }}/kubectx", dest: /usr/local/bin/kubectx }

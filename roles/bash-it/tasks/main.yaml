@@ -12,12 +12,15 @@
     clone: yes
     depth: 1
     dest: "{{ bash_it_dir }}"
+    version: master
 
 - name: Run bash_it install script
-  shell: "{{ bash_it_dir }}/install.sh --silent"
+  command: "{{ bash_it_dir }}/install.sh --silent"
+  changed_when: false
 
 - name: Set bash-it theme
   replace:
     path: "{{ bash_it_user }}/.bashrc"
     regexp: bobby
     replace: atomic
+  changed_when: false

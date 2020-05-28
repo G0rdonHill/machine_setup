@@ -1,4 +1,8 @@
 ---
+- name: Install gcloud pre-requisites
+  apt:
+    name: "{{ prereq_pkgs }}"
+    state: present
 
 - name: Add gcloud apt key
   apt_key:
@@ -9,11 +13,6 @@
   apt_repository:
     repo: deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main
     filename: google-cloud-sdk
-
-- name: Install gcloud pre-requisites
-  apt:
-    name: "{{ prereq_pkgs }}"
-    state: present
 
 - name: Update cache
   apt:

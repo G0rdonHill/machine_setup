@@ -1,4 +1,3 @@
 ---
-
 prereq_pkgs: [ca-certificates, curl, apt-transport-https, lsb-release, gnupg]
 release_name: "{{ ansible_distribution_release }}"

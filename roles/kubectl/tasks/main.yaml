@@ -21,19 +21,29 @@
     state: present
     update_cache: yes
 
-- name: Create kubectl config file
+- name: Create kubectl dir
   become: no
   file:
-    state: "{{ item.state }}"
-    path: "/home/{{ ansible_user }}/{{ item.path }}"
-  loop:
-    - { state: directory, path: .kube }
-    - { state: touch, path: .kube/config }
+    state: directory
+    path: "/home/{{ ansible_user }}/.kube"
 
-# - name: Set kubectl config file
-#   shell: "kubectl --kubeconfig /home/{{ ansible_user }}/.kube/config"
+- name: Create kubeconfig file
+  copy:
+    content: ""
+    dest: "/home/{{ ansible_user }}/.kube/config"
+    force: no
+    group: "{{ ansible_user }}"
+    owner: "{{ ansible_user }}"
+    mode: '0644'
+
+- name: Ensure autocompletion dirs exist.
+  file:
+    path: /etc/bash_completion.d
+    recurse: yes
+    state: directory
+
 - name: Enable kubectl auto completion
-  shell: kubectl completion bash >/etc/bash_completion.d/kubectl
-
+  shell: kubectl completion bash > /etc/bash_completion.d/kubectl
+  changed_when: false
 - include: kubectx.yaml
   when: kubectx

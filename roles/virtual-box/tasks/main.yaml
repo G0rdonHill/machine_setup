@@ -1,4 +1,10 @@
 ---
+- name: Install pre-requisites
+  apt:
+    name: gnupg
+    state: present
+    update_cache: yes
+
 - include: ubuntu18.yaml
   when: release_name == 'bionic'
 

@@ -5,6 +5,14 @@
     state: present
     update_cache: yes
 
+- name: Add dir for {{ ansible_user }}
+  file:
+    path: "/home/{{ ansible_user }}"
+    state: directory
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+
+
 - name: Copy git config
   template:
     src: gitconfig.j2

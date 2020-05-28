@@ -1,4 +1,10 @@
 ---
+- name: Ensure snap is installed.
+  apt:
+    name: snapd
+    state: present
+    update_cache: yes
+
 - name: Install Docker snap
   snap:
     name: docker

@@ -1,4 +1,6 @@
 ---
+- include: prereqs.yaml
+
 - include: chrome.yaml
   when: chrome
 

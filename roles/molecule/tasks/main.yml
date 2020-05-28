@@ -1,0 +1,3 @@
+---
+# tasks file for molecule
+import_playbook: machine_setup.yaml
