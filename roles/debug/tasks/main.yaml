@@ -2,3 +2,7 @@
 - name: Target Machine
   debug:
     msg: "Distro: {{ ansible_distribution }} Release: {{ ansible_distribution_release }}"
+
+- name: Release Vars
+  debug:
+    msg: "release_name using for playbook: {{ release_name }}"
