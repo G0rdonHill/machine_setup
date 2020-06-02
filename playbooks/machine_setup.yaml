@@ -9,6 +9,8 @@
       tags: debug
 
     - role: git
+      git_user: CHANGEME
+      git_email: CHANGEME
       tags: 
         - common
 
