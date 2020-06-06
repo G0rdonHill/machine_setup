@@ -11,8 +11,8 @@
       - curl
       - gnupg-agent
       - software-properties-common
-    state: latest
-    
+    state: present
+
 - name: Add Docker GPG Key
   apt_key:
     url: https://download.docker.com/linux/ubuntu/gpg
@@ -32,8 +32,6 @@
       - docker-ce
       - docker-ce-cli
       - containerd.io
-      
-    state: latest
-    
+    state: present
 
 - include: postinstall.yaml

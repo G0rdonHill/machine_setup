@@ -11,7 +11,7 @@
     - role: git
       git_user: CHANGEME
       git_email: CHANGEME
-      tags: 
+      tags:
         - common
 
     - role: docker
@@ -53,11 +53,11 @@
     - role: kubectl
       tags:
         - devops
-    
+
     - role: helm
       tags:
         - devops
-    
+
     - role: vs-code
       tags:
         - devops
@@ -73,3 +73,4 @@
 ## Tools ##
 ## chrome extenstions
 # multisystem usb boot
+## virtualenvs // molecule

@@ -3,4 +3,4 @@
   when: calibre
 
 - include: spotify.yaml
-  when: spotify
+  when: spotify and not running_on_molecule | bool

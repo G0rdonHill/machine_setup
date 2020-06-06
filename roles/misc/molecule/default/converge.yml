@@ -1,0 +1,9 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include misc"
+      include_role:
+        name: "misc"
+  vars:
+    spotify: no

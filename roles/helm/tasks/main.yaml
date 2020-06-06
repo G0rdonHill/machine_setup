@@ -1,15 +1,3 @@
 ---
-- name: Install pre-requisite
-  apt:
-    name: "{{ prereq_pkgs }}"
-    state: present
-    update_cache: yes
-
-- name: Install Helm
-  snap:
-    name: helm
-    state: present
-    classic: yes
-
-- name: Helm Completion
-  shell: helm completion bash >/etc/bash_completion.d/helm
+- include: install.yaml
+  when: not running_on_molecule | bool

@@ -1,0 +1,6 @@
+---
+- name: Install pre-requisites
+  apt:
+    name: gnupg
+    state: present
+    update_cache: yes
