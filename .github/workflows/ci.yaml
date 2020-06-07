@@ -1,0 +1,38 @@
+---
+name: CI
+'on':
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+
+  test:
+    name: Molecule
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        distro:
+          - ubuntu:18.04
+          - ubuntu:20.04
+          - linuxmintd/mint19.3-amd64
+
+    steps:
+      - name: Check out git repo.
+        uses: actions/checkout@v2
+
+      - name: Set up python 3
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install test dependencies
+        run: pip3 install molecule docker yamllint ansible-lint
+      
+      - name: Run molecule test
+        run: cd roles/molecule && molecule test
+        env:
+          PY_COLORS: '1'
+          ANSIBLE_FORCE_COLOR: '1'
+          MOLECULE_DISTRO: ${{ matrix.distro }}

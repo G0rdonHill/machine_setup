@@ -1,3 +1,5 @@
 ---
 # tasks file for molecule
-import_playbook: machine_setup.yaml
+- name: Placeholder
+  debug:
+    msg: "Placeholder"

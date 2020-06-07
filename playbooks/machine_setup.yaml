@@ -68,6 +68,8 @@
 
     - role: misc
 
+    - role: multiboot
+
 ## TODO List ##
 
 ## virtualenvs // molecule
