@@ -69,6 +69,8 @@
 
     - role: misc
 
+    - role: multiboot
+
   vars:
     ansible_user: root
     running_on_molecule: yes
