@@ -1,3 +1,4 @@
 ---
-prereq_pkgs: [ bash-completion, snapd ]
+prereq_pkgs: [ bash-completion, apt-transport-https, gpg-agent ]
 running_on_molecule: no
+use_snap: no
