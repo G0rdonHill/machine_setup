@@ -60,6 +60,7 @@
         - devops
 
     - role: vs-code
+      install_extensions: no
       tags:
         - devops
 
