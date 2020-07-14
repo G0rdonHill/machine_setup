@@ -5,7 +5,18 @@
     state: present
     update_cache: yes
 
-- name: Install spotify snap
-  snap:
-    name: spotify
+- name: Add spotify apt key
+  apt_key:
+    url: https://download.spotify.com/debian/pubkey.gpg
     state: present
+
+- name: Add spotify repo
+  apt_repository:
+    repo: deb http://repository.spotify.com stable non-free
+
+- name: Install spotify client
+  apt:
+    name: spotify-client
+    state: present
+    update_cache: yes
+    cache_valid_time: 3600
