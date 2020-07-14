@@ -9,12 +9,12 @@ lint: |
   ansible-lint
 
 platforms:
-  - name: ubuntu18
-    image: ubuntu:18.04
-  # - name: ubuntu20
-  #   image: geerlingguy/docker-ubuntu2004-ansible
-  - name: mint19
-    image: linuxmintd/mint19.3-amd64
+  # - name: ubuntu18
+  #   image: ubuntu:18.04
+  - name: ubuntu20
+    image: geerlingguy/docker-ubuntu2004-ansible
+  # - name: mint19
+  #   image: linuxmintd/mint19.3-amd64
 
 provisioner:
   name: ansible

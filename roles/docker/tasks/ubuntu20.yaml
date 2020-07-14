@@ -1,13 +1,37 @@
 ---
-- name: Ensure snap is installed.
+- name: Update apt
   apt:
-    name: snapd
-    state: present
     update_cache: yes
 
-- name: Install Docker snap
-  snap:
-    name: docker
+- name: Install dependencies
+  apt:
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - gnupg-agent
+      - software-properties-common
+    state: present
+
+- name: Add Docker GPG Key
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: Add Docker Repository
+  apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable
+
+- name: Update apt
+  apt:
+    update_cache: yes
+
+- name: Install Docker
+  apt:
+    name:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
     state: present
 
 - include: postinstall.yaml
