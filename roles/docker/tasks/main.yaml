@@ -2,8 +2,11 @@
 - include: ubuntu18.yaml
   when: release_name == 'bionic'
 
+- include: snap_ubuntu.yaml
+  when: release_name == 'focal' and use_snap and not running_on_molecule | bool
+
 - include: ubuntu20.yaml
-  when: release_name == 'focal' and not running_on_molecule | bool
+  when: release_name == 'focal'
 
 - debug:
     msg: "Ansible using python interpreter {{ ansible_python_interpreter }}"

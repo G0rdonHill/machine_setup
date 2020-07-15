@@ -1,15 +1,29 @@
 ---
-- name: Install pre-requisite
+- name: Install Pre-requisite Packages
   apt:
     name: "{{ prereq_pkgs }}"
     state: present
-    update_cache: yes
 
-- name: Install Helm
-  snap:
+- name: Add helm apt key
+  apt_key:
+    url: https://helm.baltorepo.com/organization/signing.asc
+    state: present
+
+- name: Add helm repo
+  apt_repository:
+    repo: deb https://baltocdn.com/helm/stable/debian/ all main
+
+- name: Install helm
+  apt:
     name: helm
     state: present
-    classic: yes
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Create bash_completion.d dir
+  file:
+    name: /etc/bash_completion.d
+    state: directory
 
 - name: Helm Completion
   shell: helm completion bash > /etc/bash_completion.d/helm

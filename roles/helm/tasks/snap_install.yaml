@@ -1,0 +1,18 @@
+---
+- name: Install pre-requisite
+  apt:
+    name:
+      - "{{ prereq_pkgs }}"
+      - snapd
+    state: present
+    update_cache: yes
+
+- name: Install Helm
+  snap:
+    name: helm
+    state: present
+    classic: yes
+
+- name: Helm Completion
+  shell: helm completion bash > /etc/bash_completion.d/helm
+  changed_when: false

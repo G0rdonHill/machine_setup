@@ -4,3 +4,12 @@
   command: "/snap/bin/code --install-extension {{ item }}"
   loop: "{{ code_extensions }}"
   changed_when: false
+  when: use_snap
+
+# This breaks in molecule, requires a bunch of libraries and maybe X. 
+- name: Install Code Extensions
+  become: no
+  command: "/usr/bin/code --install-extension {{ item }}"
+  loop: "{{ code_extensions }}"
+  changed_when: false
+  when: not use_snap

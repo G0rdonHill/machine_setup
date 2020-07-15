@@ -1,3 +1,4 @@
 ---
 release_name: "{{ ansible_distribution_release }}"
 running_on_molecule: no
+use_snap: no
