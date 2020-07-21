@@ -2,3 +2,7 @@
 - name: Include vars when mint is detected
   include_vars: ../../../vars/mint19.yaml
   when: ansible_distribution_release == 'tricia'
+
+- name: Include vars when mint is detected
+  include_vars: ../../../vars/mint20.yaml
+  when: ansible_distribution_release == 'ulyana'

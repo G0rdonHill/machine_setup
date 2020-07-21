@@ -19,6 +19,9 @@ ubuntu20:
 mint:
 	@vagrant up mint --provision
 
+mint20:
+	@vagrant up mint20 --provision
+
 clean-ubuntu18:
 	@vagrant destroy ubuntu_bionic -f
 
@@ -36,6 +39,9 @@ con-ubuntu20:
 
 con-mint:
 	@vagrant ssh mint
+
+con-mint20:
+	@vagrant ssh mint20
 
 down-ubuntu18:
 	@vagrant suspend ubuntu_bionic

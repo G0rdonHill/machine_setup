@@ -1,31 +1,16 @@
 ---
+- name: Add virtualbox keys
+  apt_key:
+    url: https://www.virtualbox.org/download/oracle_vbox_2016.asc
+    state: present
+
 - name: Add Virtual Box Repository
   apt_repository:
     repo: "deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian {{ release_name }} contrib"
     filename: virtualbox
     update_cache: no
-## This has stopped working
-# - name: Download virtualbox keys
-#   get_url:
-#     url: https://www.virtualbox.org/download/oracle_vbox_2016.asc
-#     dest: /etc/apt/trusted.gpg.d/oracle_vbox_2016.asc.gpg
-- name: Copy virtualbox key
-  copy:
-    src: oracle_vbox_2016.asc
-    dest: /etc/apt/trusted.gpg.d/oracle_vbox_2016.asc.gpg
 
-- name: Add virtualbox keys
-  apt_key:
-    # url: https://www.virtualbox.org/download/oracle_vbox_2016.asc
-    file: /etc/apt/trusted.gpg.d/oracle_vbox_2016.asc.gpg
-    state: present
-
-# - name: Add virtualbox keys 2
-#   apt_key:
-#     url: https://www.virtualbox.org/download/oracle_vbox.asc
-#     state: present
-
-- name: Install Virtualbox
+- name: Install Virtualbox Ubuntu 18.04
   apt:
     name: "virtualbox-{{ virtualbox_version }}"
     update_cache: yes
