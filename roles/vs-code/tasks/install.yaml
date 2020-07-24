@@ -1,4 +1,9 @@
 ---
+- name: Install pre-requisites
+  apt:
+    name: "{{ prereq_pkgs }}"
+    state: present
+
 - name: Install VS Code
   apt:
     deb: https://go.microsoft.com/fwlink/?LinkID=760868

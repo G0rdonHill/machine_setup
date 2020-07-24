@@ -1,7 +1,7 @@
 ---
 - name: Install pre-requisites
   apt:
-    name: "{{ prereq_pkgs }}"
+    name: "{{ snap_prereq_pkgs }}"
     state: present
 
 - name: Install VS Code
