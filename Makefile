@@ -4,6 +4,9 @@ USERNAME := $(shell whoami)
 init-ubuntu:
 	@./scripts/init_ubuntu.sh ${USERNAME}
 
+init-mint:
+	@./scripts/init_mint.sh ${USERNAME}
+
 provision: 
 	ansible-playbook -u ${USERNAME} -i inventory/inventory playbooks/machine_setup.yaml
 
