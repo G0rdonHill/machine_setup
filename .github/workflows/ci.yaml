@@ -14,7 +14,6 @@ jobs:
     strategy:
       matrix:
         distro:
-          - ubuntu:18.04
           - ubuntu:20.04
           - linuxmintd/mint19.3-amd64
 
