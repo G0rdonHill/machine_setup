@@ -1,5 +1,4 @@
 ---
-# tasks file for molecule
 - name: Placeholder
   debug:
     msg: "Placeholder"

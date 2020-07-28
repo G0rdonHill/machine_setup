@@ -1,6 +1,4 @@
 ---
-# tasks file for multiboot
-
 - name: Install multiboot .deb file.
   apt:
     deb: "{{ download_url }}"
