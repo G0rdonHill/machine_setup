@@ -70,6 +70,8 @@
 
     - role: multiboot
 
+    - role: virtualenv
+
   vars:
     ansible_user: root
     running_on_molecule: yes

@@ -1,0 +1,26 @@
+---
+- name: Install apt pre-requisites
+  apt:
+    name: "{{ pre_reqs }}"
+    state: present
+
+- name: Install pip pre-requisites
+  pip:
+    name:
+      - setuptools
+      - wheel
+      - virtualenv
+    state: present
+    executable: pip3
+
+- name: Create molecule virtualenv dir
+  file:
+    path: ~/.virtualenvs/molecule
+    state: directory
+    mode: "0755"
+
+- name: Install molecule in virtualenv
+  pip:
+    name: molecule
+    virtualenv_python: python3
+    virtualenv: ~/.virtualenvs/molecule
