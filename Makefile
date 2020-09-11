@@ -1,10 +1,16 @@
-SHELL := /bin/bash
 USERNAME := $(shell whoami)
 
+mint:
+	chmod +x ./scripts/init_mint.sh
+	@./scripts/init_mint.sh ${USERNAME}
+	ansible-playbook -u ${USERNAME} -i inventory/inventory playbooks/machine_setup.yaml
+
 init-ubuntu:
+	chmod +x ./scripts/init_ubuntu.sh
 	@./scripts/init_ubuntu.sh ${USERNAME}
 
 init-mint:
+	chmod +x ./scripts/init_mint.sh
 	@./scripts/init_mint.sh ${USERNAME}
 
 provision: 
@@ -13,16 +19,16 @@ provision:
 provision-debug:
 	ansible-playbook -u ${USERNAME} -i inventory/inventory playbooks/machine_setup.yaml --tags debug
 
-ubuntu18:
+vagrant-ubuntu18:
 	@vagrant up ubuntu_bionic --provision
 
-ubuntu20:
+vagrant-ubuntu20:
 	@vagrant up ubuntu_focal --provision
 
-mint:
+vagrant-mint:
 	@vagrant up mint --provision
 
-mint20:
+vagrant-mint20:
 	@vagrant up mint20 --provision
 
 clean-ubuntu18:
