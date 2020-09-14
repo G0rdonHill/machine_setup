@@ -11,6 +11,7 @@ For now, this is will be targeted for ubuntu-based linux distros.
 
 # Getting Started
 
-Assuming you have a fresh install, simply clone this repo to your local disk, open in terminal, and run:
+Assuming you have a fresh install, clone this repo to your local disk.
+Change the encrypted group vars to include your git variables (see git role defaults). Open in terminal, and run:
 
 `make install`
