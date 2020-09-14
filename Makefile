@@ -1,34 +1,23 @@
 USERNAME := $(shell whoami)
 
-mint:
-	chmod +x ./scripts/init_mint.sh
-	@./scripts/init_mint.sh ${USERNAME}
+install:
+	chmod +x ./scripts/init.sh
+	@./scripts/init.sh ${USERNAME}
 	ansible-playbook -u ${USERNAME} -i inventory/inventory playbooks/machine_setup.yaml
 
-init-ubuntu:
-	chmod +x ./scripts/init_ubuntu.sh
-	@./scripts/init_ubuntu.sh ${USERNAME}
-
-init-mint:
-	chmod +x ./scripts/init_mint.sh
-	@./scripts/init_mint.sh ${USERNAME}
-
-provision: 
-	ansible-playbook -u ${USERNAME} -i inventory/inventory playbooks/machine_setup.yaml
-
-provision-debug:
+debug:
 	ansible-playbook -u ${USERNAME} -i inventory/inventory playbooks/machine_setup.yaml --tags debug
 
-vagrant-ubuntu18:
+ubuntu18:
 	@vagrant up ubuntu_bionic --provision
 
-vagrant-ubuntu20:
+ubuntu20:
 	@vagrant up ubuntu_focal --provision
 
-vagrant-mint:
+mint:
 	@vagrant up mint --provision
 
-vagrant-mint20:
+mint20:
 	@vagrant up mint20 --provision
 
 clean-ubuntu18:
