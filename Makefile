@@ -1,16 +1,11 @@
-SHELL := /bin/bash
 USERNAME := $(shell whoami)
 
-init-ubuntu:
-	@./scripts/init_ubuntu.sh ${USERNAME}
-
-init-mint:
-	@./scripts/init_mint.sh ${USERNAME}
-
-provision: 
+install:
+	chmod +x ./scripts/init.sh
+	@./scripts/init.sh ${USERNAME}
 	ansible-playbook -u ${USERNAME} -i inventory/inventory playbooks/machine_setup.yaml
 
-provision-debug:
+debug:
 	ansible-playbook -u ${USERNAME} -i inventory/inventory playbooks/machine_setup.yaml --tags debug
 
 ubuntu18:

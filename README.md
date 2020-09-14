@@ -2,9 +2,16 @@
 
 ![CI](https://github.com/g1212/machine_setup/workflows/CI/badge.svg?branch=master)
 
-Ansible repo designed to set up my machine with necessary Dev(Ops) tooling.
-
+Ansible repo designed to set up machine with necessary Dev(Ops) tooling.
+Included various browsers, spotify and calibre.
 
 Assumed that the playbook will run against local host.
 
-For now, this is will be targeted for debian-based linux distros.
+For now, this is will be targeted for ubuntu-based linux distros.
+
+# Getting Started
+
+Assuming you have a fresh install, clone this repo to your local disk.
+Change the encrypted group vars to include your git variables (see git role defaults). Open in terminal, and run:
+
+`make install`
