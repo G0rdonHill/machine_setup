@@ -1,12 +1,25 @@
 USERNAME := $(shell whoami)
 
+.ONESHELL:
 install:
 	chmod +x ./scripts/init.sh
 	@./scripts/init.sh ${USERNAME}
-	ansible-playbook -u ${USERNAME} -i inventory/inventory playbooks/machine_setup.yaml
+	ansible-playbook \
+		--user ${USERNAME} \
+		--inventory inventory/hosts.yaml \
+		playbooks/machine_setup.yaml
+	deactivate
+	rm -rf ~/.installer
+
+requirements:
+	pip3 install -r roles/virtualenv/files/requirements.txt
 
 debug:
-	ansible-playbook -u ${USERNAME} -i inventory/inventory playbooks/machine_setup.yaml --tags debug
+	ansible-playbook \
+		--user ${USERNAME} \
+		--inventory inventory/hosts.yaml \
+		--tags debug \
+		playbooks/machine_setup.yaml
 
 ubuntu18:
 	@vagrant up ubuntu_bionic --provision
