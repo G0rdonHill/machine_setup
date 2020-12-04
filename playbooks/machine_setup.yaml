@@ -67,3 +67,4 @@
     - role: multiboot
 
     - role: virtualenv
+      become: no
