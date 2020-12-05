@@ -19,8 +19,13 @@
     state: directory
     mode: "0755"
 
-- name: Install molecule in virtualenv
+- name: Copy requirements
+  copy:
+    src: requirements.txt
+    dest: /var/tmp/requirements.txt
+
+- name: Install requirements in virtualenv
   pip:
-    name: molecule
+    requirements: /var/tmp/requirements.txt
     virtualenv_python: python3
     virtualenv: ~/.virtualenvs/molecule
