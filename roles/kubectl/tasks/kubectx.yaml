@@ -5,6 +5,7 @@
     dest: "{{ kubectx_dir }}"
     clone: yes
     version: master
+    update: no
 
 - name: Create symlinks for PATH and bash completion
   file:

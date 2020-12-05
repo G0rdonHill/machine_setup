@@ -2,13 +2,13 @@ USERNAME := $(shell whoami)
 
 .ONESHELL:
 install:
+	set -e
 	chmod +x ./scripts/init.sh
 	@./scripts/init.sh ${USERNAME}
 	ansible-playbook \
 		--user ${USERNAME} \
 		--inventory inventory/hosts.yaml \
 		playbooks/machine_setup.yaml
-	deactivate
 	rm -rf ~/.installer
 
 requirements:

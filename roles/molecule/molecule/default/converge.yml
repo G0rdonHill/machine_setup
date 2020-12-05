@@ -19,24 +19,24 @@
       tags:
         - devops
 
-    - role: azure-cli
+    - role: azure_cli
       tags:
         - devops
 
-    - role: google-cloud
+    - role: google_cloud
       tags:
         - devops
 
-    - role: docker-compose
+    - role: docker_compose
       tags:
         - devops
 
-    - role: bash-it
+    - role: bash_it
       become: no
       tags:
         - common
 
-    - role: virtual-box
+    - role: virtual_box
       tags:
         - devops
         - vbox
@@ -57,7 +57,7 @@
       tags:
         - devops
 
-    - role: vs-code
+    - role: vs_code
       user_data_dir: "--user-data-dir /root"
       tags:
         - devops
@@ -78,11 +78,3 @@
     ansible_python_interpreter: /usr/bin/python3
     bash_it_user: "/root"
     molecule_remote_src: yes
-
-
-## TODO List ##
-
-## Tools ##
-## chrome extenstions
-# multisystem usb boot
-## virtualenvs // molecule

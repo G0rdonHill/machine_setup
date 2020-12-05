@@ -16,24 +16,24 @@
       tags:
         - devops
 
-    - role: azure-cli
+    - role: azure_cli
       tags:
         - devops
 
-    - role: google-cloud
+    - role: google_cloud
       tags:
         - devops
 
-    - role: docker-compose
+    - role: docker_compose
       tags:
         - devops
 
-    - role: bash-it
+    - role: bash_it
       become: no
       tags:
         - common
 
-    - role: virtual-box
+    - role: virtual_box
       tags:
         - devops
         - vbox
@@ -54,7 +54,7 @@
       tags:
         - devops
 
-    - role: vs-code
+    - role: vs_code
       tags:
         - devops
 
