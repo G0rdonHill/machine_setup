@@ -3,6 +3,7 @@
   apt:
     name: "{{ prereq_pkgs }}"
     state: present
+    update_cache: yes
 
 - name: Add helm apt key
   apt_key:
@@ -24,6 +25,7 @@
   file:
     name: /etc/bash_completion.d
     state: directory
+    mode: '0755'
 
 - name: Helm Completion
   shell: helm completion bash > /etc/bash_completion.d/helm

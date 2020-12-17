@@ -26,6 +26,7 @@
   file:
     state: directory
     path: "/home/{{ ansible_user }}/.kube"
+    mode: '0744'
 
 - name: Create kubeconfig file
   copy:
@@ -39,11 +40,13 @@
 - name: Ensure autocompletion dirs exist.
   file:
     path: /etc/bash_completion.d
-    recurse: yes
+    recurse: no
     state: directory
+    mode: '0755'
 
 - name: Enable kubectl auto completion
   shell: kubectl completion bash > /etc/bash_completion.d/kubectl
   changed_when: false
+
 - include: kubectx.yaml
   when: kubectx
