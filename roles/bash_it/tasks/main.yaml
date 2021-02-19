@@ -16,7 +16,7 @@
 
 - name: Run bash_it install script
   command: "{{ bash_it_dir }}/install.sh --silent"
-  changed_when: false
+  creates: "{{ bash_it_user }}/.bashrc.bak"
 
 - name: Set bash-it theme
   replace:
