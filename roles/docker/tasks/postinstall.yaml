@@ -10,5 +10,6 @@
     groups: docker
     name: "{{ ansible_user_id }}"
 
-- debug:
+- name: Debug system restart
+  debug:
     msg: Restart system for group changes to take affect

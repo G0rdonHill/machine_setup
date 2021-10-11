@@ -28,11 +28,6 @@
       tags:
         - devops
 
-    - role: bash_it
-      become: no
-      tags:
-        - common
-
     - role: virtual_box
       tags:
         - devops
