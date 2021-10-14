@@ -8,5 +8,6 @@
 - include: ubuntu20.yaml
   when: release_name == 'focal'
 
-- debug:
+- name: Debug python interpreter
+  debug:
     msg: "Ansible using python interpreter {{ ansible_python_interpreter }}"

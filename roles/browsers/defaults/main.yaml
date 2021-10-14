@@ -1,6 +1,6 @@
 ---
 chrome: yes
 brave: yes
-tor: yes
+tor: no
 chrome_url: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 release_name: "{{ ansible_distribution_release }}"

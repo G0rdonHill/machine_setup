@@ -9,11 +9,24 @@
 
 - name: Create symlinks for PATH and bash completion
   file:
-    src: "{{ item.src }}"
-    dest: "{{ item.dest }}"
+    src: "{{ kubectx_dir }}/kubectx"
+    dest: /usr/local/bin/kubectx
     state: link
-  loop:
-    - { src: "{{ kubectx_dir }}/kubectx", dest: /usr/local/bin/kubectx }
-    - { src: "{{ kubectx_dir }}/kubens", dest: /usr/local/bin/kubens }
-    - { src: "{{ kubectx_dir }}/completion/kubens.bash", dest: /etc/bash_completion.d/kubens }
-    - { src: "{{ kubectx_dir }}/completion/kubectx.bash", dest: /etc/bash_completion.d/kubectx }
+
+- name: Create symlinks for PATH and bash completion
+  file:
+    src: "{{ kubectx_dir }}/kubens"
+    dest: /usr/local/bin/kubens
+    state: link
+
+- name: Create symlinks for PATH and bash completion
+  file:
+    src: "{{ kubectx_dir }}/completion/kubens.bash"
+    dest: /etc/bash_completion.d/kubens
+    state: link
+
+- name: Create symlinks for PATH and bash completion
+  file:
+    src: "{{ kubectx_dir }}/completion/kubectx.bash"
+    dest: /etc/bash_completion.d/kubectx
+    state: link
