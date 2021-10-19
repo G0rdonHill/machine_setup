@@ -18,6 +18,7 @@ jobs:
         distro:
           - ubuntu:20.04
           - linuxmintd/mint20-amd64
+          - linuxmintd/mint20.2-amd64
     steps:
       - name: Check out git repo.
         uses: actions/checkout@v2
