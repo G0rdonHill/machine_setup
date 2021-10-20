@@ -1,0 +1,26 @@
+---
+name: branch-ci
+on:
+  push:
+    branches:
+      - '*'
+      - '!master'
+  workflow_dispatch:
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out git repo.
+        uses: actions/checkout@v2
+      - name: Set up python 3
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Install lint requirements
+        run: pip install -r ./scripts/lint_requirements.txt
+      - name: Yaml lint
+        run: yamllint .
+      - name: Ansible lint
+        run: ansible-lint .
