@@ -4,7 +4,9 @@ USERNAME := $(shell whoami)
 install:
 	set -e
 	chmod +x ./scripts/init.sh
+    echo "PATH=$$PATH:/home/${USERNAME}/.local/bin" >> ~/.profile
 	@./scripts/init.sh ${USERNAME}
+	. /home/${USERNAME}/.installer/bin/activate
 	ansible-playbook \
 		--user ${USERNAME} \
 		--inventory inventory/hosts.yaml \
