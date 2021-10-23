@@ -1,14 +1,6 @@
 ---
 - name: Install Code Extensions
   become: no
-  command: "/snap/bin/code --install-extension {{ item }}"
-  loop: "{{ code_extensions }}"
-  changed_when: false
-  when: use_snap
-
-- name: Install Code Extensions
-  become: no
   command: "/usr/bin/code --install-extension {{ item }} {{ user_data_dir }}"
   loop: "{{ code_extensions }}"
   changed_when: false
-  when: not use_snap

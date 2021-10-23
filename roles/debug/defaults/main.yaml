@@ -1,1 +1,0 @@
-release_name: "{{ ansible_distribution_release }}"

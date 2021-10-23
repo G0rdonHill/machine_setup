@@ -5,5 +5,3 @@
     - name: "Include azure_cli"
       include_role:
         name: "azure_cli"
-  vars:
-    release_name: bionic

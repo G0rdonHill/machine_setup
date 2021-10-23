@@ -4,4 +4,4 @@ calibre_script: /var/tmp/linux-installer.sh
 spotify: yes
 prereq_pkgs: [ gpg-agent ]
 running_on_molecule: no
-use_snap: no
+
