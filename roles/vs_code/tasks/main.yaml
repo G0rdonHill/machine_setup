@@ -1,9 +1,5 @@
 ---
-- include: snap_install.yaml
-  when: use_snap and not running_on_molecule | bool
-
 - include: install.yaml
-  when: not use_snap
 
 - include: extensions.yaml
   when: install_extensions

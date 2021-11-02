@@ -6,8 +6,4 @@
     state: present
     update_cache: yes
 
-- include: ubuntu18.yaml
-  when: release_name == 'bionic'
-
 - include: ubuntu20.yaml
-  when: release_name == 'focal' or release_name == 'uma'

@@ -2,8 +2,4 @@
 - include: calibre.yaml
   when: calibre
 
-- include: snap_spotify.yaml
-  when: spotify and use_snap and not running_on_molecule | bool
-
 - include: spotify.yaml
-  when: not use_snap

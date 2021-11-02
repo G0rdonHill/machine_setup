@@ -89,13 +89,6 @@ jobs:
       - name: Install test dependencies
         run: make requirements
 
-      - name: Test include role
-        run: cd roles/include && molecule test
-        env:
-          PY_COLORS: '1'
-          ANSIBLE_FORCE_COLOR: '1'
-          MOLECULE_DISTRO: ${{ matrix.distro }}
-
       - name: Test debug role
         run: cd roles/debug && molecule test
         env:

@@ -2,9 +2,6 @@
 - name: Converge
   hosts: all
   tasks:
-    - name: Incude vars
-      include_role:
-        name: "include"
 
     - name: "Include browsers"
       include_role:

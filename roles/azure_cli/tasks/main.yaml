@@ -13,7 +13,7 @@
 
 - name: Add azure cli repo
   apt_repository:
-    repo: "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ {{ release_name }} main"
+    repo: "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ focal main"
     filename: azure-cli
 
 - name: Install azure cli

@@ -1,3 +1,2 @@
 ---
-release_name: "{{ ansible_distribution_release }}"
 virtualbox_version: 6.1

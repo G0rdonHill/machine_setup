@@ -6,7 +6,7 @@
 
 - name: Add Virtual Box Repository
   apt_repository:
-    repo: "deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian {{ release_name }} contrib"
+    repo: "deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian focal contrib"
     filename: virtualbox
     update_cache: yes
 
