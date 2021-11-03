@@ -96,6 +96,25 @@ jobs:
           - ubuntu:20.04
           - linuxmintd/mint20-amd64
           - linuxmintd/mint20.2-amd64
+        role:
+          - debug
+          - git
+          - docker
+          - azure_cli
+          - google_cloud
+          - docker_compose
+          - virtual_box
+          - vagrant
+          - terraform
+          - kubectl
+          - helm
+          - vs_code
+          - browsers
+          - misc
+          - multiboot
+          - virtualenv
+          - ohmyzsh
+
     steps:
       - name: Check out git repo.
         uses: actions/checkout@v2
@@ -107,76 +126,6 @@ jobs:
 
       - name: Install test dependencies
         run: make requirements
-
-      - name: Test debug role
-        run: cd roles/debug && molecule test
-        env:
-          PY_COLORS: '1'
-          ANSIBLE_FORCE_COLOR: '1'
-          MOLECULE_DISTRO: ${{ matrix.distro }}
-
-      - name: Test git role
-        run: cd roles/git && molecule test
-        env:
-          PY_COLORS: '1'
-          ANSIBLE_FORCE_COLOR: '1'
-          MOLECULE_DISTRO: ${{ matrix.distro }}
-
-      - name: Test docker role
-        run: cd roles/docker && molecule test
-        env:
-          PY_COLORS: '1'
-          ANSIBLE_FORCE_COLOR: '1'
-          MOLECULE_DISTRO: ${{ matrix.distro }}
-
-      - name: Test azure_cli role
-        run: cd roles/azure_cli && molecule test
-        env:
-          PY_COLORS: '1'
-          ANSIBLE_FORCE_COLOR: '1'
-          MOLECULE_DISTRO: ${{ matrix.distro }}
-
-      - name: Test google_cloud role
-        run: cd roles/google_cloud && molecule test
-        env:
-          PY_COLORS: '1'
-          ANSIBLE_FORCE_COLOR: '1'
-          MOLECULE_DISTRO: ${{ matrix.distro }}
-
-      - name: Test docker_compose role
-        run: cd roles/docker_compose && molecule test
-        env:
-          PY_COLORS: '1'
-          ANSIBLE_FORCE_COLOR: '1'
-          MOLECULE_DISTRO: ${{ matrix.distro }}
-
-      - name: Test virtual_box role
-        run: cd roles/virtual_box && molecule test
-        env:
-          PY_COLORS: '1'
-          ANSIBLE_FORCE_COLOR: '1'
-          MOLECULE_DISTRO: ${{ matrix.distro }}
-
-      - name: Test vagrant role
-        run: cd roles/vagrant && molecule test
-        env:
-          PY_COLORS: '1'
-          ANSIBLE_FORCE_COLOR: '1'
-          MOLECULE_DISTRO: ${{ matrix.distro }}
-
-      - name: Test terraform role
-        run: cd roles/terraform && molecule test
-        env:
-          PY_COLORS: '1'
-          ANSIBLE_FORCE_COLOR: '1'
-          MOLECULE_DISTRO: ${{ matrix.distro }}
-
-      - name: Test kubectl role
-        run: cd roles/kubectl && molecule test
-        env:
-          PY_COLORS: '1'
-          ANSIBLE_FORCE_COLOR: '1'
-          MOLECULE_DISTRO: ${{ matrix.distro }}
 
       - name: Test helm role
         run: cd roles/helm && molecule test
@@ -192,43 +141,9 @@ jobs:
           ANSIBLE_FORCE_COLOR: '1'
           MOLECULE_DISTRO: ${{ matrix.distro }}
 
-      - name: Test browsers role
-        run: cd roles/browsers && molecule test
+      - name: Test ${{ matrix.role }} role
+        run: cd roles/${{ matrix.role }} && molecule test
         env:
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'
           MOLECULE_DISTRO: ${{ matrix.distro }}
-
-      - name: Test misc role
-        run: cd roles/misc && molecule test
-        env:
-          PY_COLORS: '1'
-          ANSIBLE_FORCE_COLOR: '1'
-          MOLECULE_DISTRO: ${{ matrix.distro }}
-
-      - name: Test multiboot role
-        run: cd roles/multiboot && molecule test
-        env:
-          PY_COLORS: '1'
-          ANSIBLE_FORCE_COLOR: '1'
-          MOLECULE_DISTRO: ${{ matrix.distro }}
-
-      - name: Test virtualenv role
-        run: cd roles/virtualenv && molecule test
-        env:
-          PY_COLORS: '1'
-          ANSIBLE_FORCE_COLOR: '1'
-          MOLECULE_DISTRO: ${{ matrix.distro }}
-
-      - name: Test ohmyzsh role
-        run: cd roles/ohmyzsh && molecule test
-        env:
-          PY_COLORS: '1'
-          ANSIBLE_FORCE_COLOR: '1'
-          MOLECULE_DISTRO: ${{ matrix.distro }}
-      # - name: Run molecule test
-      #   run: cd roles/molecule && molecule test
-      #   env:
-      #     PY_COLORS: '1'
-      #     ANSIBLE_FORCE_COLOR: '1'
-      #     MOLECULE_DISTRO: ${{ matrix.distro }}

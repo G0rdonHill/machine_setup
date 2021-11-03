@@ -62,6 +62,6 @@
     - role: virtualenv
       become: no
 
-   - role: ohmyzsh
-     tags: 
-       - changed
+    - role: ohmyzsh
+      tags:
+        - changed
