@@ -13,6 +13,21 @@ install:
 		playbooks/machine_setup.yaml
 	rm -rf ~/.installer
 
+.ONESHELL:
+install-changed:
+	set -e
+	chmod +x ./scripts/init.sh
+	if ! grep -Fxq ".local/bin" ~/.profile; then echo "PATH=$$PATH:/home/${USERNAME}/.local/bin" >> ~/.profile; fi
+	@./scripts/init.sh ${USERNAME}
+	. /home/${USERNAME}/.installer/bin/activate
+	ansible-playbook \
+		--user ${USERNAME} \
+		--inventory inventory/hosts.yaml \
+		--tags changed
+		playbooks/machine_setup.yaml
+	rm -rf ~/.installer
+
+
 requirements:
 	pip3 install -r roles/virtualenv/files/requirements.txt
 
