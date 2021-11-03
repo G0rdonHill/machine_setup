@@ -1,0 +1,9 @@
+---
+- name: Check for zsh
+  stat:
+    file: /usr/bin/zsh
+  register: zsh_check
+
+- name: install
+  include: install.yaml
+  when: not zsh_check.stat.exists

@@ -1,0 +1,17 @@
+---
+- name: Download oh-my-zsh
+  get_url:
+    url: "{{ zsh_url }}"
+    dest: "{{ zsh_script_dest }}/{{ zsh_script_file }}"
+    timeout: 30
+
+# - name: Make Executable
+#   file:
+#     path: /usr/local/bin/docker-compose
+#     mode: +x
+
+- name: Run install script
+  command:
+    cmd: /bin/bash -c {{ zsh_script_file }}
+    chdir: "{{ zsh_script_dest }}"
+    creates: /usr/bin/zsh
