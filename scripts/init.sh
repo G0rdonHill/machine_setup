@@ -15,7 +15,7 @@ pip3 install setuptools wheel
 pip3 install virtualenv
 which virtualenv
 
-mkdir /home/${user}/.installer
+mkdir -p /home/${user}/.installer
 
 virtualenv /home/${user}/.installer
 
