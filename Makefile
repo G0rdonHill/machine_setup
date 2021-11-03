@@ -23,7 +23,7 @@ install-changed:
 	ansible-playbook \
 		--user ${USERNAME} \
 		--inventory inventory/hosts.yaml \
-		--tags changed
+		--tags changed \
 		playbooks/machine_setup.yaml
 	rm -rf ~/.installer
 
