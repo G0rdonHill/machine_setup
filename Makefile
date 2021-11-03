@@ -4,7 +4,7 @@ USERNAME := $(shell whoami)
 install:
 	set -e
 	chmod +x ./scripts/init.sh
-	echo "PATH=$$PATH:/home/${USERNAME}/.local/bin" >> ~/.profile
+	if ! grep -Fxq ".local/bin" ~/.profile; then echo "PATH=$$PATH:/home/${USERNAME}/.local/bin" >> ~/.profile; fi
 	@./scripts/init.sh ${USERNAME}
 	. /home/${USERNAME}/.installer/bin/activate
 	ansible-playbook \

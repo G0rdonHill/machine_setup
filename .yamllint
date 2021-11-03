@@ -38,6 +38,6 @@ rules:
       - 'yes'
       - 'no'
 yaml-files:
-- '*.yaml'
-- '*.yml'
-- '.yamllint'
+  - '*.yaml'
+  - '*.yml'
+  - '.yamllint'

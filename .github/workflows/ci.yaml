@@ -60,10 +60,8 @@ jobs:
       - name: Run ansible playbook
         run: |
               set -e
-              echo $VAULT > ./.vault
               make install
         env:
-          VAULT: ${{ secrets.VAULT_PW }}
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'
 
