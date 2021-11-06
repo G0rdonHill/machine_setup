@@ -5,6 +5,7 @@
     cache_valid_time: 3600
 
 - name: Install zsh
+  become: true
   apt:
     name: zsh
     state: present
