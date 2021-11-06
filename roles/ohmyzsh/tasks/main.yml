@@ -1,9 +1,12 @@
 ---
-- name: Check for zsh
-  stat:
-    file: /usr/bin/zsh
-  register: zsh_check
+- name: Update apt
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
 
-- name: install
-  include: install.yaml
-  when: not zsh_check.stat.exists
+- name: Install zsh
+  apt:
+    name: zsh
+    state: present
+    update_cache: yes
+    
