@@ -13,7 +13,7 @@ lint: |
 #     image: geerlingguy/docker-ubuntu2004-ansible
 platforms:
   - name: instance
-    image: ${MOLECULE_DISTRO:-"ubuntu:18.04"}
+    image: ${MOLECULE_DISTRO:-"ubuntu:20.04"}
 
 provisioner:
   name: ansible
