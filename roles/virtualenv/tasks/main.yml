@@ -1,5 +1,6 @@
 ---
 - name: Install apt pre-requisites
+  become: true
   apt:
     name: "{{ pre_reqs }}"
     state: present

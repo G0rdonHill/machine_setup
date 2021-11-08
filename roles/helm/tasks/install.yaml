@@ -1,20 +1,24 @@
 ---
 - name: Install Pre-requisite Packages
+  become: true
   apt:
     name: "{{ prereq_pkgs }}"
     state: present
     update_cache: yes
 
 - name: Add helm apt key
+  become: true
   apt_key:
     url: https://helm.baltorepo.com/organization/signing.asc
     state: present
 
 - name: Add helm repo
+  become: true
   apt_repository:
     repo: deb https://baltocdn.com/helm/stable/debian/ all main
 
 - name: Install helm
+  become: true
   apt:
     name: helm
     state: present

@@ -41,6 +41,7 @@
     - role: kubectl
       tags:
         - devops
+        - changed
 
     - role: helm
       tags:

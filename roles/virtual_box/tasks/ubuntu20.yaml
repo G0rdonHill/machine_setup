@@ -1,16 +1,19 @@
 ---
 - name: Add virtualbox keys
+  become: true
   apt_key:
     url: https://www.virtualbox.org/download/oracle_vbox_2016.asc
     state: present
 
 - name: Add Virtual Box Repository
+  become: true
   apt_repository:
     repo: "deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian focal contrib"
     filename: virtualbox
     update_cache: yes
 
 - name: Install Virtualbox Ubuntu 20
+  become: true
   apt:
     name: virtualbox-6.1
     update_cache: yes
