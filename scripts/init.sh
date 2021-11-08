@@ -18,7 +18,7 @@ function apt_dependencies() {
 
 function pip_dependencies() {
 	if ! grep -Fxq ".local/bin" ~/.profile ; then 
-          echo "PATH=$$PATH:/home/${USERNAME}/.local/bin" >> ~/.profile
+          echo "PATH=$PATH:/home/${USERNAME}/.local/bin" >> ~/.profile
      fi
      pip3 install setuptools wheel
      pip3 install virtualenv

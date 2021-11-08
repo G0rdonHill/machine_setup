@@ -2,20 +2,11 @@ USERNAME := $(shell whoami)
 
 .ONESHELL:
 install:
-	set -e
-	chmod +x ./scripts/init.sh
-	if ! grep -Fxq ".local/bin" ~/.profile; then echo "PATH=$$PATH:/home/${USERNAME}/.local/bin" >> ~/.profile; fi
-	@./scripts/init.sh ${USERNAME}
-	. /home/${USERNAME}/.installer/bin/activate
-	ansible-playbook \
-		--user ${USERNAME} \
-		--inventory inventory/hosts.yaml \
-		playbooks/machine_setup.yaml
-	rm -rf ~/.installer
+	./scripts/install.sh
 
 .ONESHELL:
 install-changed:
-	./scripts/install.sh
+	./scripts/install.sh changed
 
 
 requirements:
