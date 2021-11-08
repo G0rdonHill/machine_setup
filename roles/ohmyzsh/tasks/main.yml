@@ -1,5 +1,6 @@
 ---
 - name: Update apt
+  become: true
   apt:
     update_cache: yes
     cache_valid_time: 3600
@@ -10,9 +11,7 @@
     name: zsh
     state: present
     update_cache: yes
-- name: debug user
-  debug:
-    msg: Ansible user is {{ ansible_user_id }}
+
 - name: make zsh the default shell
   become: yes
   user:
