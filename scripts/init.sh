@@ -17,7 +17,7 @@ function apt_dependencies() {
 }
 
 function pip_dependencies() {
-	if [[ ! grep -Fxq ".local/bin" ~/.profile ]]; then 
+	if ! grep -Fxq ".local/bin" ~/.profile ; then 
           echo "PATH=$$PATH:/home/${USERNAME}/.local/bin" >> ~/.profile
      fi
      pip3 install setuptools wheel
