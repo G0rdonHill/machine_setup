@@ -6,6 +6,11 @@
     state: present
     update_cache: yes
 
+- name: Create user dir
+  file:
+    path: /home/{{ ansible_user }}
+    state: directory
+
 - name: Copy git config
   template:
     src: gitconfig.j2
