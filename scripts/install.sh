@@ -1,9 +1,6 @@
 #!/bin/bash
 USERNAME=$(whoami)
-if [[ $1 == "play" ]]; then
-    RUN_PLAYBOOK="play"
-fi
-
+RUN_PLAYBOOK=${1:-"no"}
 if [[ -z $2 ]]; then
     TAGS=""
 else
@@ -65,8 +62,7 @@ else
 	. /home/${USERNAME}/.installer/bin/activate
 fi
 
-if [[ -z $RUN_PLAYBOOK ]]; then
-
+if [[ $RUN_PLAYBOOK == "play" ]]; then
     sudo -k
     ansible-playbook \
         --user ${USERNAME} \
