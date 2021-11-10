@@ -9,10 +9,6 @@ on:
     - cron:  '30 20 * * 5'
   workflow_dispatch:
 
-env:
-  roles: [ debug, git, docker, azure_cli, google_cloud, docker_compose, virtual_box, vagrant, terraform,
-         kubectl, helm, vs_code, browsers, misc, multiboot, virtualenv, ohmyzsh ]
-
 jobs:
   init-scripts:
     name: Init scripts
@@ -35,7 +31,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        role: ${{ env.roles }}
+        role: [ debug, git, docker, azure_cli, google_cloud, docker_compose, virtual_box, vagrant, terraform,
+        kubectl, helm, vs_code, browsers, misc, multiboot, virtualenv, ohmyzsh ]
     steps:
       - name: Check out git repo.
         uses: actions/checkout@v2
