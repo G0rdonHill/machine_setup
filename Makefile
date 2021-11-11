@@ -2,11 +2,11 @@ USERNAME := $(shell whoami)
 
 .ONESHELL:
 install:
-	./scripts/install.sh
+	./scripts/install.sh play
 
 .ONESHELL:
 install-changed:
-	./scripts/install.sh changed
+	./scripts/install.sh play changed
 
 
 requirements:

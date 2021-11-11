@@ -105,26 +105,9 @@ jobs:
       matrix:
         distro:
           - ubuntu:20.04
-          - linuxmintd/mint20-amd64
           - linuxmintd/mint20.2-amd64
-        role:
-          - debug
-          - git
-          - docker
-          - azure_cli
-          - google_cloud
-          - docker_compose
-          - virtual_box
-          - vagrant
-          - terraform
-          - kubectl
-          - helm
-          - vs_code
-          - browsers
-          - misc
-          - multiboot
-          - virtualenv
-          - ohmyzsh
+        role: [ debug, git, docker, azure_cli, google_cloud, docker_compose, virtual_box, vagrant,
+        terraform, kubectl, helm, vs_code, browsers, misc, multiboot, virtualenv, ohmyzsh]
 
     steps:
       - name: Check out git repo.
