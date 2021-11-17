@@ -1,10 +1,10 @@
 ---
 - name: Install apt pre-requisites
+  become: true
   apt:
     name: "{{ pre_reqs }}"
     state: present
     update_cache: yes
-  become: yes
 
 - name: Install pip pre-requisites
   pip:

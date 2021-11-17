@@ -20,12 +20,14 @@
     state: link
 
 - name: Create symlinks for PATH and bash completion
+  become: true
   file:
     src: "{{ kubectx_dir }}/completion/kubens.bash"
     dest: /etc/bash_completion.d/kubens
     state: link
 
 - name: Create symlinks for PATH and bash completion
+  become: true
   file:
     src: "{{ kubectx_dir }}/completion/kubectx.bash"
     dest: /etc/bash_completion.d/kubectx

@@ -1,6 +1,5 @@
 ---
 - hosts: all
-  become: true
   roles:
 
     - role: debug
@@ -42,6 +41,7 @@
     - role: kubectl
       tags:
         - devops
+        - changed
 
     - role: helm
       tags:

@@ -3,7 +3,8 @@ name: branch-build
 on:
   push:
     branches:
-      - !master
+      - '**'
+      - '!master'
   workflow_dispatch:
 
 

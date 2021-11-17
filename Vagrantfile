@@ -31,6 +31,6 @@ Vagrant.configure("2") do |config|
   end
   config.vm.define "mint20" do |mint20|
     mint20.vm.box = "epipho/mint-20.0"
-    mint20.vm.provision "shell", path: "./scripts/init_mint.sh", args: "vagrant"
+    mint20.vm.provision "shell", path: "./scripts/install.sh", args: "vagrant"
   end
 end

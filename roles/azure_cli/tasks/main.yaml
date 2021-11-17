@@ -1,22 +1,26 @@
 ---
 - name: Install Pre-requisite Packages
+  become: true
   apt:
     name: "{{ prereq_pkgs }}"
     state: present
     update_cache: yes
 
 - name: Add an Apt signing key for Az CLI
+  become: true
   apt_key:
     url: https://packages.microsoft.com/keys/microsoft.asc
     state: present
     keyring: /etc/apt/trusted.gpg.d/microsoft.asc.gpg
 
 - name: Add azure cli repo
+  become: true
   apt_repository:
     repo: "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ focal main"
     filename: azure-cli
 
 - name: Install azure cli
+  become: true
   apt:
     name: azure-cli
     update_cache: yes

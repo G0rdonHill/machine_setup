@@ -1,21 +1,25 @@
 ---
 - name: Install Pre-requisite Packages
+  become: true
   apt:
     name: "{{ prereq_pkgs }}"
     state: present
 
 - name: Add kubectl apt key
+  become: true
   apt_key:
     url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
     state: present
     keyring: /etc/apt/trusted.gpg.d/kubectl-apt-key.gpg
 
 - name: Add kubectl repo
+  become: true
   apt_repository:
     repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
     filename: kubernetes
 
 - name: Install kubectl
+  become: true
   apt:
     name: kubectl
     state: present
@@ -29,6 +33,7 @@
     mode: '0744'
 
 - name: Create kubeconfig file
+  become: true
   copy:
     content: ""
     dest: "/home/{{ ansible_user }}/.kube/config"
@@ -45,6 +50,7 @@
     mode: '0755'
 
 - name: Enable kubectl auto completion
+  become: true
   shell: kubectl completion bash > /etc/bash_completion.d/kubectl
   changed_when: false
 
