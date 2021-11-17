@@ -1,3 +1,0 @@
----
-bash_it_user: "/home/{{ ansible_user }}"
-bash_it_dir: "{{ bash_it_user }}/.bash_it"
