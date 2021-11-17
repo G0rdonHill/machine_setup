@@ -40,20 +40,11 @@ jobs:
         env:
           PY_COLORS: '1'
 
-  debug:
-    name: debug output
-    runs-on: ubuntu-latest
-    needs: set-role-matrix
-    steps:
-      - name: echo output
-        run: echo ${{ fromJson(needs.set-role-matrix.outputs.matrix) }}
-
   lint:
     name: Molecule lint
     runs-on: ubuntu-latest
     needs:
       - set-role-matrix
-      - debug
     strategy:
       matrix:
         role: ${{ fromJson(needs.set-role-matrix.outputs.matrix) }}
