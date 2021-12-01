@@ -9,7 +9,7 @@
 - name: Add spotify apt key
   become: true
   apt_key:
-    url: https://download.spotify.com/debian/pubkey_0D811D58.gpg
+    url: https://download.spotify.com/debian/{{ spotify_pub_key }}
     state: present
 
 - name: Add spotify repo
