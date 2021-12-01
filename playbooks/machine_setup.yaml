@@ -65,4 +65,3 @@
       become: no
 
     - role: ohmyzsh
-      tags:
