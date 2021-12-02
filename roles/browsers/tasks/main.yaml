@@ -1,11 +1,5 @@
 ---
 - include: prereqs.yaml
 
-- include: chrome.yaml
-  when: chrome
-
-- include: brave.yaml
-  when: brave
-
-- include: tor.yaml
-  when: tor
+- include: "{{ item }}.yaml"
+  loop: "{{ browsers }}"
