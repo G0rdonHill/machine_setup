@@ -22,10 +22,6 @@
       tags:
         - devops
 
-    - role: docker_compose
-      tags:
-        - devops
-
     - role: virtual_box
       tags:
         - devops
