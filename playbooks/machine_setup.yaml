@@ -12,16 +12,13 @@
     - role: docker
       tags:
         - devops
+        - changed
 
     - role: azure_cli
       tags:
         - devops
 
     - role: google_cloud
-      tags:
-        - devops
-
-    - role: docker_compose
       tags:
         - devops
 
@@ -41,7 +38,6 @@
     - role: kubectl
       tags:
         - devops
-        - changed
 
     - role: helm
       tags:
@@ -56,8 +52,6 @@
         - common
 
     - role: misc
-      tags:
-        - changed
 
     - role: multiboot
 
