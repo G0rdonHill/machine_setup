@@ -44,3 +44,6 @@
     state: present
 
 - include: postinstall.yaml
+
+- include: docker_compose.yaml
+  when: include_compose
