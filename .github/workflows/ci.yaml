@@ -126,6 +126,7 @@ jobs:
         distro:
           - ubuntu:20.04
           - linuxmintd/mint20.2-amd64
+          - fedora:36
         role: ${{fromJson(needs.set-role-matrix.outputs.matrix)}}
 
     steps:
