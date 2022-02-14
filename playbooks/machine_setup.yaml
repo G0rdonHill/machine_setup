@@ -12,7 +12,6 @@
     - role: docker
       tags:
         - devops
-        - changed
 
     - role: azure_cli
       tags:
@@ -46,6 +45,7 @@
     - role: vs_code
       tags:
         - devops
+        - changed
 
     - role: browsers
       tags:
