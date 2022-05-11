@@ -1,7 +1,7 @@
 ---
 - name: Install pre-requisites
   become: true
-  apt:
+  ansible.builtin.apt:
     name:
       - gnupg
     state: present

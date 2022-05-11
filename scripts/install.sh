@@ -32,9 +32,9 @@ function pip_dependencies() {
 }
 
 function installer_virtualenv() {
-     mkdir -p /home/${user}/.installer
-     virtualenv /home/${user}/.installer
-     source /home/${user}/.installer/bin/activate
+     mkdir -p /home/${USERNAME}/.installer
+     virtualenv /home/${USERNAME}/.installer
+     source /home/${USERNAME}/.installer/bin/activate
      pip3 install ansible==2.10.3
      ansible --version
 }
@@ -58,7 +58,7 @@ else
     check_user ${USERNAME}
     apt_dependencies
     pip_dependencies
-    installer_virtualenv
+    installer_virtualenv 
 	. /home/${USERNAME}/.installer/bin/activate
 fi
 

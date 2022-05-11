@@ -8,11 +8,11 @@
     - role: git
       tags:
         - common
+        - changed
 
     - role: docker
       tags:
         - devops
-        - changed
 
     - role: azure_cli
       tags:
@@ -26,22 +26,27 @@
       tags:
         - devops
         - vbox
+        - changed
 
     - role: vagrant
       tags:
         - devops
+        - changed
 
     - role: terraform
       tags:
         - devops
+        - changed
 
     - role: kubectl
       tags:
         - devops
+        - changed
 
     - role: helm
       tags:
         - devops
+        - changed
 
     - role: vs_code
       tags:

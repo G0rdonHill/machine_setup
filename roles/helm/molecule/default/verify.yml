@@ -3,7 +3,7 @@
   hosts: all
   tasks:
   - name: Gather package facts
-    package_facts:
+    ansible.builtin.package_facts:
       manager: auto
 
   - name: Verify Packages
