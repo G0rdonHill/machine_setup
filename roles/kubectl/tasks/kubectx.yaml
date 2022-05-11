@@ -8,12 +8,14 @@
     update: no
 
 - name: Create symlinks for PATH and bash completion
+  become: true
   file:
     src: "{{ kubectx_dir }}/kubectx"
     dest: /usr/local/bin/kubectx
     state: link
 
 - name: Create symlinks for PATH and bash completion
+  become: true
   file:
     src: "{{ kubectx_dir }}/kubens"
     dest: /usr/local/bin/kubens

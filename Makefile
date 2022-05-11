@@ -1,4 +1,4 @@
-USERNAME := $(shell whoami)
+USERNAME := g
 
 .ONESHELL:
 install:

@@ -18,6 +18,7 @@
   when: not stat_terraform.stat.exists
 
 - name: Extract terraform into /usr/local/bin
+  become: true
   unarchive:
     src: "/var/tmp/{{ terraform_zip }}"
     dest: /usr/local/bin/
