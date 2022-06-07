@@ -5,14 +5,14 @@
     - role: debug
       tags: debug
 
-    - role: git
-      tags:
-        - common
-        - changed
+    # - role: git
+    #   tags:
+    #     - common
+    #     - changed
 
-    - role: docker
-      tags:
-        - devops
+    # - role: docker
+    #   tags:
+    #     - devops
 
     - role: azure_cli
       tags:
@@ -22,11 +22,11 @@
       tags:
         - devops
 
-    - role: virtual_box
-      tags:
-        - devops
-        - vbox
-        - changed
+    # - role: virtual_box
+    #   tags:
+    #     - devops
+    #     - vbox
+    #     - changed
 
     - role: vagrant
       tags:
@@ -48,13 +48,13 @@
         - devops
         - changed
 
-    - role: vs_code
-      tags:
-        - devops
+    # - role: vs_code
+    #   tags:
+    #     - devops
 
-    - role: browsers
-      tags:
-        - common
+    # - role: browsers
+    #   tags:
+    #     - common
 
     - role: misc
 
